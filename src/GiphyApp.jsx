@@ -13,11 +13,26 @@ const GiphyApp = () => {
   
   const [categories, setCategory] = useState(initialState);
 
+  const onAddCategory = ( newCategory ) => {
+
+    // ShortHand
+    // setCategory([ newCategory, ...categories ]);
+
+    // With hook callback
+    setCategory((previousCategories) => {
+      return [
+        newCategory,
+        ...previousCategories
+      ]
+    });
+
+  };
+
   return (
     <>
       <h1 className="display-1 blue">GiphyApp</h1>
 
-      <AddItem setItem={setCategory} />
+      <AddItem onNewItem={ onAddCategory } />
 
       <ul>
         { categories.map((category, i) => (<li key={i}>{category}</li>)) }

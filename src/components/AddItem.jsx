@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AddItem = ({ setItem }) => {
+const AddItem = ({ onNewItem }) => {
 
   const [ inputValue, setInputValue ] = useState('');
 
@@ -8,15 +8,16 @@ const AddItem = ({ setItem }) => {
     setInputValue(target.value);
   };
 
-  const onAddItem = (event) => {
+  const onSubmit = (event) => {
     event.preventDefault();
-    if (inputValue.trim().length <= 2) return;
-    setItem(items => [ ...items, inputValue ]);
+    const value = inputValue.trim();
+    if (value.length <= 2) return;
+    onNewItem(value);
     setInputValue('');
   };
 
   return (
-    <form onSubmit={ onAddItem }>
+    <form onSubmit={ onSubmit }>
       <input
         className="form-control mt-4 mb-2"
         type="text"
