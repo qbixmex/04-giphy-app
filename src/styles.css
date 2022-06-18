@@ -1,64 +1,47 @@
-* {
-  font-family: Helvetica, Arial, sans-serif;
-  background-color: hsl(0, 0%, 92%);
-  color: #333;
+:root {
+  --blue: hsl(215, 90%, 50%);
+  --purple: hsl(261, 51%, 51%);
+  --pink: hsl(330, 67%, 52%);
+  --red: hsl(354, 70%, 54%);
+  --orange: hsl(27, 98%, 54%);
+  --yellow: hsl(45, 100%, 51%);
+  --green: hsl(152, 69%, 31%);
+  --navy: hsl(205, 85%, 60%);
+  --dark: #222222;
+  --white: #eeeeee;
+  --gray: hsl(208, 7%, 46%);
+  --dark-grey: hsl(210, 10%, 23%);
 }
+
+/* Text Colors */
+.blue { color: var(--blue); }
+.purple { color: var(--purple); }
+.pink { color: var(--pink); }
+.red { color: var(--red); }
+.orange { color: var(--orange); }
+.yellow { color: var(--yellow); }
+.green { color: var(--green); }
+.navy { color: var(--navy); }
+.dark { color: var(--dark); }
+.white { color: var(--white); }
+.gray { color: var(--gray); }
+.dark-gray { color: var(--dark-grey); }
+
+/* Background Colors */
+.bg-blue { background-color: var(--blue); }
+.bg-purple { background-color: var(--purple); }
+.bg-pink { background-color: var(--pink); }
+.bg-red { background-color: var(--red); }
+.bg-orange { background-color: var(--orange); }
+.bg-yellow { background-color: var(--yellow); }
+.bg-green { background-color: var(--green); }
+.bg-navy { background-color: var(--navy); }
+.bg-dark { background-color: var(--dark); }
+.bg-white { background-color: var(--white); }
+.bg-gray { background-color: var(--gray); }
+.bg-dark-gray { background-color: var(--dark-grey); }
 
 body {
   padding: 60px;
-}
-
-input {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid hsl(271, 66%, 37%);
-  color: black;
-  font-size: 1.2rem;
-  outline: none;
-  padding: 10px 15px;
-  width: 100%;
-}
-
-h2 {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 3rem;
-  margin-bottom: 5px;
-}
-
-.card-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card {
-  align-content: center;
-  align-items: center;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 3px 5px hsla(0, 0%, 0%, 0.03);
-  display: flex;
-  flex-direction: column;
-  height: 0%;  
-  justify-content: center;
-  margin-bottom: 20px;
-  margin-right: 20px;
-  overflow: hidden;
-}
-
-.card p {
-  background-color: white;
-  flex: 1;
-  font-size: 1.5rem;
-  margin-top: 5px;
-  padding: 5px 20px 0px 20px;
-  text-align: center;
-}
-
-.card img {
-  width: 100%;
+  background-color: hsl(0, 0%, 92%);
 }
