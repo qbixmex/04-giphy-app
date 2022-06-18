@@ -17,7 +17,7 @@ const GiphyApp = () => {
     <>
       <h1 className="display-1 blue">GiphyApp</h1>
 
-      <AddItem items={categories} setItem={setCategory} />
+      <AddItem setItem={setCategory} />
 
       <ul>
         { categories.map((category, i) => (<li key={i}>{category}</li>)) }
