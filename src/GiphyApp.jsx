@@ -2,14 +2,10 @@ import { useState } from "react";
 import AddItem from "./components/AddItem";
 import GifGrid from "./components/GifGrid";
 
-const key = '0B0PGiIZ9D4lOXJ2bPvE9GAXMKI7hBfc';
-
 const GiphyApp = () => {
 
   const initialState = [
     { id: 1, name: 'Dragon Ball Super' },
-    { id: 2, name: 'Demon Slayer' },
-    { id: 3, name: 'Shingeki no kyojin' },
   ];
   
   const [categories, setCategory] = useState(initialState);
