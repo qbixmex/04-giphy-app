@@ -3,20 +3,32 @@ import { getGifs } from "../helpers/getGifs";
 
 const GifGrid = ({ category }) => {
 
-  const [counter, setCounter] = useState(0);
+  const [gifs, setGifs] = useState([]);
+
+  const getData = async () => {
+    const newGifs = await getGifs(category);
+    setGifs(newGifs);
+  }
 
   useEffect(() => {
-    getGifs(category);
+    getData();
   }, []);
 
   return (
     <>
-      <h2>{ category.name }</h2>
-      <h3>{ counter }</h3>
-      <button
-        className="btn btn-primary"
-        onClick={ () => setCounter(counter + 1) }
-      >+1</button>
+
+      <h2>{category.name}</h2>
+
+      <ul className="list-group">
+      {
+        gifs.map(({ id, title }) => (
+          <li key={ id } className="list-group-item">
+            { title }
+          </li>
+        ))
+        }
+      </ul>
+
     </>
   );
 };
