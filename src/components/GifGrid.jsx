@@ -1,31 +1,26 @@
-import { useState, useEffect } from "react";
-import { getGifs } from "../helpers/getGifs";
+import useFetchGifs from "../hooks/useFetchGifs";
 import GiphyItem from "./GiphyItem";
+import Spinner from "./Spinner";
 
 const GifGrid = ({ category }) => {
 
-  const [gifs, setGifs] = useState([]);
-
-  const getData = async () => {
-    const newGifs = await getGifs(category);
-    setGifs(newGifs);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
+  const { gifs, isLoading } = useFetchGifs(category.name);
 
   return (
     <>
       <h2>{category.name}</h2>
 
-      <div className="row">
-      {
-        gifs.length > 0 && gifs.map(({ id, ...rest }) => (
-          <GiphyItem key={ id } { ...rest } />
-        ))
-      }
-      </div>
+    {
+      isLoading ? <Spinner color='blue' />
+      :
+        <div className="row">
+          {
+            gifs.length > 0 && gifs.map(({ id, ...rest }) => (
+              <GiphyItem key={id} {...rest} />
+            ))
+          }
+        </div>
+    }
     </>
   );
 };
