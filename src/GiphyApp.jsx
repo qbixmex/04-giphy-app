@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AddItem from "./components/AddItem";
+import GifGrid from "./components/GifGrid";
 
 const key = '0B0PGiIZ9D4lOXJ2bPvE9GAXMKI7hBfc';
 
@@ -28,19 +29,21 @@ const GiphyApp = () => {
 
   return (
     <>
-      <h1 className="display-1 blue">GiphyApp</h1>
+      <h1 className="display-1 blue text-center">GiphyApp</h1>
 
       <AddItem onNewItem={ onAddCategory } />
 
-      <ul>
-        {
-          categories.map(({ id, name }) => (
-            <li key={id}>{ name }</li>
-          ))
-        }
-      </ul>
+      <div className="row">
+      {
+        categories.map(category => (
+          <GifGrid key={ category.id } category={ category } />
+        ))
+      }
+      </div>
     </>
   );
 };
+
+{/* <li key={id}>{ name }</li> */}
 
 export default GiphyApp;

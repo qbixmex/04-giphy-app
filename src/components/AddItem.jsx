@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const AddItem = ({ onNewItem }) => {
 
-  const [ inputValue, setInputValue ] = useState('');
+  const [inputValue, setInputValue] = useState('');
 
   const onInputChange = ({ target }) => {
     setInputValue(target.value);
@@ -17,22 +17,27 @@ const AddItem = ({ onNewItem }) => {
   };
 
   return (
-    <form onSubmit={ onSubmit }>
-      <input
-        className="form-control mt-4 mb-2"
-        type="text"
-        onChange={onInputChange}
-        value={inputValue}
-        placeholder='Search Gifs'
-      />
-      <div className="d-grid mb-3">
-        <button
-          type="submit"
-          className="btn btn-primary"
-          disabled={ ( inputValue.trim().length <= 2 ) && true }
-        >
-          Add
-        </button>
+
+    <form onSubmit={onSubmit}>
+      <div className="row mt-4 mb-4 g-2 justify-content-center align-items-center">
+        <div className="col-12 col-md-6 col-lg-4 col-xl-3">
+          <input
+            className="form-control"
+            type="text"
+            onChange={onInputChange}
+            value={inputValue}
+            placeholder='Search Gifs'
+          />
+        </div>
+        <div className="d-grid col-12 col-md-auto">
+          <button
+            type="submit"
+            className="btn btn-primary d-inline"
+            disabled={(inputValue.trim().length <= 2) && true}
+          >
+            Add
+          </button>
+        </div>
       </div>
     </form>
   );
