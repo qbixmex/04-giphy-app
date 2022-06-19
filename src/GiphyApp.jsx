@@ -4,9 +4,7 @@ import GifGrid from "./components/GifGrid";
 
 const GiphyApp = () => {
 
-  const initialState = [
-    { id: 1, name: 'Dragon Ball Super' },
-  ];
+  const initialState = [];
   
   const [categories, setCategory] = useState(initialState);
 
@@ -28,14 +26,12 @@ const GiphyApp = () => {
       <h1 className="display-1 blue text-center">GiphyApp</h1>
 
       <AddItem onNewItem={ onAddCategory } />
-
-      <div className="row">
+      
       {
         categories.map(category => (
           <GifGrid key={ category.id } category={ category } />
         ))
       }
-      </div>
     </>
   );
 };

@@ -42,6 +42,6 @@
 .bg-dark-gray { background-color: var(--dark-grey); }
 
 body {
-  padding: 60px;
+  padding: 40px;
   background-color: hsl(0, 0%, 92%);
 }

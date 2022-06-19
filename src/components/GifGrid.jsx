@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getGifs } from "../helpers/getGifs";
+import GiphyItem from "./GiphyItem";
 
 const GifGrid = ({ category }) => {
 
@@ -8,7 +9,7 @@ const GifGrid = ({ category }) => {
   const getData = async () => {
     const newGifs = await getGifs(category);
     setGifs(newGifs);
-  }
+  };
 
   useEffect(() => {
     getData();
@@ -16,19 +17,15 @@ const GifGrid = ({ category }) => {
 
   return (
     <>
-
       <h2>{category.name}</h2>
 
-      <ul className="list-group">
+      <div className="row">
       {
-        gifs.map(({ id, title }) => (
-          <li key={ id } className="list-group-item">
-            { title }
-          </li>
+        gifs.length > 0 && gifs.map(({ id, ...rest }) => (
+          <GiphyItem key={ id } { ...rest } />
         ))
-        }
-      </ul>
-
+      }
+      </div>
     </>
   );
 };
