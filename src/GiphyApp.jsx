@@ -6,25 +6,23 @@ const key = '0B0PGiIZ9D4lOXJ2bPvE9GAXMKI7hBfc';
 const GiphyApp = () => {
 
   const initialState = [
-    'Dragon Ball Super',
-    'Demon Slayer',
-    'Shingeki no kyojin'
+    { id: 1, name: 'Dragon Ball Super' },
+    { id: 2, name: 'Demon Slayer' },
+    { id: 3, name: 'Shingeki no kyojin' },
   ];
   
   const [categories, setCategory] = useState(initialState);
 
   const onAddCategory = ( newCategory ) => {
+    if (categories.find(category => category.name === newCategory)) return;
 
-    // ShortHand
-    // setCategory([ newCategory, ...categories ]);
-
-    // With hook callback
-    setCategory((previousCategories) => {
-      return [
-        newCategory,
-        ...previousCategories
-      ]
-    });
+    setCategory([
+      {
+        id: categories.length + 1,
+        name: newCategory
+      },
+      ...categories
+    ]);
 
   };
 
@@ -35,7 +33,11 @@ const GiphyApp = () => {
       <AddItem onNewItem={ onAddCategory } />
 
       <ul>
-        { categories.map((category, i) => (<li key={i}>{category}</li>)) }
+        {
+          categories.map(({ id, name }) => (
+            <li key={id}>{ name }</li>
+          ))
+        }
       </ul>
     </>
   );
