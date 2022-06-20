@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
 const AddItem = ({ onNewItem }) => {
 
@@ -41,6 +42,10 @@ const AddItem = ({ onNewItem }) => {
       </div>
     </form>
   );
+};
+
+AddItem.propTypes = {
+  onNewItem: PropTypes.func.isRequired,
 };
 
 export default AddItem;
