@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import useFetchGifs from "../hooks/useFetchGifs";
 import { GiphyItem, Spinner } from "./";
 
@@ -20,6 +21,10 @@ const GifGrid = ({ category }) => {
       </div>
     </>
   );
+};
+
+GifGrid.propTypes = {
+  category: PropTypes.object.isRequired,
 };
 
 export default GifGrid;
