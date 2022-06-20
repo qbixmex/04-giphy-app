@@ -1,6 +1,5 @@
 import useFetchGifs from "../hooks/useFetchGifs";
-import GiphyItem from "./GiphyItem";
-import Spinner from "./Spinner";
+import { GiphyItem, Spinner } from "./";
 
 const GifGrid = ({ category }) => {
 
