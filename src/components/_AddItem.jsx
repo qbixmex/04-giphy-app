@@ -10,7 +10,6 @@ const AddItem = ({ onNewItem }) => {
   };
 
   const onSubmit = (event) => {
-    console.log('Form Submitted');
     event.preventDefault();
     const value = inputValue.trim();
     if (value.length <= 2) return;
