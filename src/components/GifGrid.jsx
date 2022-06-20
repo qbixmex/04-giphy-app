@@ -10,17 +10,15 @@ const GifGrid = ({ category }) => {
     <>
       <h2>{category.name}</h2>
 
-    {
-      isLoading ? <Spinner color='blue' />
-      :
-        <div className="row">
-          {
-            gifs.length > 0 && gifs.map(({ id, ...rest }) => (
-              <GiphyItem key={id} {...rest} />
-            ))
-          }
-        </div>
-    }
+      { isLoading && <Spinner color='blue' /> }
+
+      <div className="row">
+        {
+          gifs.length > 0 && gifs.map(({ id, ...rest }) => (
+            <GiphyItem key={id} {...rest} />
+          ))
+        }
+      </div>
     </>
   );
 };
