@@ -10,6 +10,7 @@ const AddItem = ({ onNewItem }) => {
   };
 
   const onSubmit = (event) => {
+    console.log('Form Submitted');
     event.preventDefault();
     const value = inputValue.trim();
     if (value.length <= 2) return;
@@ -19,7 +20,7 @@ const AddItem = ({ onNewItem }) => {
 
   return (
 
-    <form onSubmit={onSubmit}>
+    <form aria-label='form' onSubmit={onSubmit}>
       <div className="row mt-4 mb-4 g-2 justify-content-center align-items-center">
         <div className="col-12 col-md-6 col-lg-4 col-xl-3">
           <input

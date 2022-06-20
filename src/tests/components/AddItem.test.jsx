@@ -15,4 +15,17 @@ describe('Test on <AddItem />', () => {
     expect(input.value).toBe(searchTerm);
   });
 
+  test('Should call onSubmit if input has a value', () => {
+    const searchTerm = 'Dragon Ball';
+
+    render( <AddItem onNewItem={ () => undefined } /> );
+
+    const input = screen.getByRole('textbox');
+    const form = screen.getByRole('form');
+    
+    fireEvent.input(input, { target: { value: searchTerm }});
+    fireEvent.submit(form);
+
+    expect(input.value).toBe('');
+  });
 });
