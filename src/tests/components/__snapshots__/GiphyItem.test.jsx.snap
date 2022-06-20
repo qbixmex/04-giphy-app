@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on <GiphyItem /> Should match with snapshot 1`] = `
+<div>
+  <div
+    class="col-xs-12 col-sm-6 col-lg-4"
+  >
+    <div
+      class="card mb-4"
+    >
+      <img
+        alt="Dragon Ball Super"
+        class="card-img-top"
+        src="https://giphy.com/dragon-ball-super.gif"
+      />
+      <div
+        class="card-footer"
+      >
+        <p
+          class="mb-0 fw-bold"
+        >
+          Dragon Ball Super
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

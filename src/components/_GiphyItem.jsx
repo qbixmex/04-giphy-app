@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const GiphyItem = ({ url, title }) => {
   return (
     <div className="col-xs-12 col-sm-6 col-lg-4">
@@ -9,6 +11,11 @@ const GiphyItem = ({ url, title }) => {
       </div>
     </div>
   );
+};
+
+GiphyItem.propTypes = {
+  url: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default GiphyItem;
