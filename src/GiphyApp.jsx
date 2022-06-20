@@ -1,7 +1,6 @@
 import { useState } from "react";
 import AddItem from "./components/_AddItem";
 import { GifGrid } from "./components";
-import { v4 as uuidv4 } from 'uuid';
 
 const GiphyApp = () => {
 
@@ -13,7 +12,7 @@ const GiphyApp = () => {
 
     setCategory([
       {
-        id: uuidv4(),
+        id: new Date(),
         name: newCategory
       },
       ...categories

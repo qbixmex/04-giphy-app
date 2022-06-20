@@ -19,7 +19,7 @@ const AddItem = ({ onNewItem }) => {
 
   return (
 
-    <form aria-label='form' onSubmit={onSubmit}>
+    <form aria-label="form" onSubmit={onSubmit}>
       <div className="row mt-4 mb-4 g-2 justify-content-center align-items-center">
         <div className="col-12 col-md-6 col-lg-4 col-xl-3">
           <input
